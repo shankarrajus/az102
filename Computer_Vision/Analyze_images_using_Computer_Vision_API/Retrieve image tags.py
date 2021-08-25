@@ -2,6 +2,7 @@ from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
+import config
 
 from array import array
 import os
@@ -9,8 +10,8 @@ from PIL import Image
 import sys
 import time
 
-subscription_key = "<enter your key here>"
-endpoint = "<enter your endpoint URL here>"
+subscription_key = config.az_cog_svc_key
+endpoint = config.az_cog_svc_ep
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
